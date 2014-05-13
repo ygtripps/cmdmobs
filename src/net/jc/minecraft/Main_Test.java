@@ -59,18 +59,12 @@ public class Main_Test{
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
                 	player.sendMessage(ChatColor.AQUA + "Spawns <mob> at <player>'s location anmed [name]");
-<<<<<<< HEAD
                 }else if(args[0].equalsIgnoreCase("authors")){
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.AQUA + "Polarcraft");
                 	player.sendMessage(ChatColor.GREEN + "mesome32");
                 }else if(args[0].equalsIgnoreCase("PigZombie")){
-                    world.spawnEntity(TargetLocation, EntityType.PIG_ZOMBIE);
-=======
-                }
-                else if(args[0].equalsIgnoreCase("PigZombie")){
                     pigZombie = w.spawnEntity(TargetLocation, EntityType.PIG_ZOMBIE);
->>>>>>> Fixed shit
                 }else if(args[0].equalsIgnoreCase("Cow")){
                     cow = w.spawnEntity(TargetLocation, EntityType.COW);
                 }else if(args[0].equalsIgnoreCase("Blaze")){
