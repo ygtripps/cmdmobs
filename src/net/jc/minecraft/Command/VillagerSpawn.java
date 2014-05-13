@@ -25,17 +25,11 @@ public class VillagerSpawn implements CommandExecutor {
 			        	sb.append(args[i]).append(" ");
 			        	}
 			        	String allArgs = sb.toString().trim();
-			        	/**if(vlist.contains(allArgs)) {  \\COMING SOON//
-			        		sender.sendMessage("There is already a villager with the name: " + allArgs);
-			        		Bukkit.broadcastMessage("test1");
-			        	} else {**/
-				        	Location bl = p.getLocation();
-				        	World w = p.getWorld();
-				        	v = w.spawn(bl, Villager.class);
-							v.setCustomName(allArgs);
-							//vlist.add(allArgs);
-							//vlist2.add(v);
-							sender.sendMessage("Villager Spawned with name: "+ v.getCustomName());
+				        Location bl = p.getLocation();
+				        World w = p.getWorld();
+				        v = w.spawn(bl, Villager.class);
+						v.setCustomName(allArgs);
+						sender.sendMessage("Villager Spawned with name: "+ v.getCustomName());
 			        }
 			} else {
 				sender.sendMessage(ChatColor.DARK_RED +"You do not have permission to do this!");
