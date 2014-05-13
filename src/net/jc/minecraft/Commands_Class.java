@@ -71,7 +71,7 @@ public class Commands_Class implements CommandExecutor{
                 World w = p.getWorld();
                 Location bl = p.getLocation();
                 if(args[0].equalsIgnoreCase("Wolf")){
-                	wolf = w.spawn(bl, Wolf.class);
+                    wolf = w.spawn(bl, Wolf.class);
                 	wolf.setCustomName(args[1]);
                 	sender.sendMessage("You have spawned a wolf with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Pig")){
@@ -79,15 +79,23 @@ public class Commands_Class implements CommandExecutor{
                 	pig.setCustomName(args[1]);
                 	sender.sendMessage("You have spawned a pig with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("help")){
+                	if(args.length > 1) {
+                		player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
+                		return false;
+                	}
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
                 	player.sendMessage(ChatColor.AQUA + "Spawns <mob> at <player>'s location anmed [name]");
                 }else if(args[0].equalsIgnoreCase("authors")){
+                	if(args.length > 1) {
+                		player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
+                		return false;
+                	}
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.AQUA + "Polarcraft");
                 	player.sendMessage(ChatColor.GREEN + "mesome32");
                 }else if(args[0].equalsIgnoreCase("PigZombie")){
-                	pigZombie = w.spawn(bl, PigZombie.class);
+                    pigZombie = w.spawn(bl, PigZombie.class);
                 	pigZombie.setCustomName(args[1]);
                 	sender.sendMessage("You have spawned a pigzombie with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Cow")){
@@ -170,6 +178,8 @@ public class Commands_Class implements CommandExecutor{
                     zombie = w.spawn(bl, Zombie.class);
                     zombie.setCustomName(args[1]);
                     sender.sendMessage("You have spawned a zombie with the customname: " + args[1]);
+                } else {
+                	sender.sendMessage("That is not a valid mob!");
                 }
             }
         }
