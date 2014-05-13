@@ -60,7 +60,7 @@ public class Commands_Class implements CommandExecutor{
         Player player = (Player) sender;
         if(cmd.getName().equalsIgnoreCase("cm")){
         	Player p = (Player) sender;
-            if(args.length > 0){
+            if(args.length > 2){
                 player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
                 player.sendMessage(ChatColor.BLUE + "Use; /cm help");
             }
@@ -73,9 +73,11 @@ public class Commands_Class implements CommandExecutor{
                 if(args[0].equalsIgnoreCase("Wolf")){
                 	wolf = w.spawn(bl, Wolf.class);
                 	wolf.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a wolf with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Pig")){
                 	pig = w.spawn(bl, Pig.class);
                 	pig.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a pig with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("help")){
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
@@ -87,66 +89,87 @@ public class Commands_Class implements CommandExecutor{
                 }else if(args[0].equalsIgnoreCase("PigZombie")){
                 	pigZombie = w.spawn(bl, PigZombie.class);
                 	pigZombie.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a pigzombie with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Cow")){
                 	cow = w.spawn(bl, Cow.class);
-                	cow.setCustomName(args[1]);
+                    cow.setCustomName(args[1]);
+                    sender.sendMessage("You have spawned a cow with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Blaze")){
                 	blaze = w.spawn(bl, Blaze.class);
                 	blaze.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a blaze with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("CaveSpider")){
                 	caveSpider = w.spawn(bl, CaveSpider.class);
                 	caveSpider.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a cavespider with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Chicken")){
                 	wolf = w.spawn(bl, Wolf.class);
                 	wolf.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a chicken with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Creeper")){
                 	creeper = w.spawn(bl, Creeper.class);
                 	creeper.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a creeper with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("EnderDragon")){
                 	enderDragon = w.spawn(bl, EnderDragon.class);
                 	enderDragon.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a enderdragon with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Enderman")){
                 	enderman = w.spawn(bl, Enderman.class);
                 	enderman.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a enderman with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Ghast")){
                 	ghast = w.spawn(bl, Ghast.class);
                 	ghast.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a ghast with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Giant")){
                 	giant = w.spawn(bl, Giant.class);
                 	giant.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a giant with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("IronGolem")){
                 	ironGolem = w.spawn(bl, IronGolem.class);
                 	ironGolem.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a irongolem with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("MagmaCube")){
                 	magmaCube = w.spawn(bl, MagmaCube.class);
                 	magmaCube.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a magmacube with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Ocelot")){
                 	ocelot = w.spawn(bl, Ocelot.class);
                 	ocelot.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a ocelot with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Sheep")){
                 	sheep = w.spawn(bl, Sheep.class);
                 	sheep.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a sheep with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("SilverFish")){
                 	silverfish = w.spawn(bl, Silverfish.class);
                 	silverfish.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a silverfish with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Skeleton")){
                 	skeleton = w.spawn(bl, Skeleton.class);
                 	skeleton.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a skeleton with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Slime")){
                 	slime = w.spawn(bl, Slime.class);
                 	slime.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a slime with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Spider")){
                 	spider = w.spawn(bl, Spider.class);
                 	spider.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a spider with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Squid")){
                 	squid = w.spawn(bl, Squid.class);
                 	squid.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a squid with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Villager")){
                 	villager = w.spawn(bl, Villager.class);
                 	villager.setCustomName(args[1]);
+                	sender.sendMessage("You have spawned a villager with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Zombie")){
                     zombie = w.spawn(bl, Zombie.class);
                     zombie.setCustomName(args[1]);
+                    sender.sendMessage("You have spawned a zombie with the customname: " + args[1]);
                 }
             }
         }
