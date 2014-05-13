@@ -1,3 +1,6 @@
 name: CmdMobs
 main: net.jc.minecraft.Main
 version: 5.12.14
+commands:
+  cm:
+     description: Used to spawn mobs with ease.
