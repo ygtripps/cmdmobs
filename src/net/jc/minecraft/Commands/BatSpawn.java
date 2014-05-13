@@ -29,8 +29,8 @@ public class BatSpawn implements CommandExecutor {
 				        Location bl = p.getLocation();
 				        World w = p.getWorld();
 				        b = w.spawn(bl, Bat.class);
-						b.setCustomName(allArgs);
-						sender.sendMessage("Bat Spawned with name: "+ b.getCustomName());
+					b.setCustomName(allArgs);
+					sender.sendMessage("Bat Spawned with name: "+ b.getCustomName());
 			        }
 			} else {
 				sender.sendMessage(ChatColor.DARK_RED +"You do not have permission to do this!");
