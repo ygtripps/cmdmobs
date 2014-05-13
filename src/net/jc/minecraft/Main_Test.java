@@ -5,77 +5,112 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
-public class Main_Test {
+public class Main_Test{
+	Entity wolf;
+	Entity pig;
+	Entity pigZombie;
+	Entity cow;
+	Entity blaze;
+	Entity caveSpider;
+	Entity Chicken;
+	Entity chicken; 
+	Entity zombie; 
+	Entity villager; 
+	Entity squid; 
+	Entity spider; 
+	Entity slime; 
+	Entity skeleton; 
+	Entity sheep; 
+	Entity silverfish; 
+	Entity ocelot; 
+	Entity magmaCube; 
+	Entity ironGolem; 
+	Entity giant; 
+	Entity ghast; 
+	Entity enderman; 
+	Entity enderDragon; 
+	Entity creeper;
+	String ename;
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         Player player = (Player) sender;
         if(cmd.getName().equalsIgnoreCase("cm")){
-            if(args.length < 2){
+        	Player p = (Player) sender;
+            if(args.length < 3){
                 player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
                 player.sendMessage(ChatColor.BLUE + "Use; /cm help");
-            }else if(args.length > 2){
+            }else if(args.length > 3){
                 player.sendMessage(ChatColor.RED + "Too few arguments");
                 player.sendMessage(ChatColor.BLUE + "Use; /cm help");
             }else{
                 Player TargetPlayer = player.getServer().getPlayer(args[1]);
-                World world = TargetPlayer.getWorld();
+                World w = p.getWorld();
                 Location TargetLocation = TargetPlayer.getLocation();
+                ename = args[2];
                 if(args[0].equalsIgnoreCase("Wolf")){
-                    world.spawnEntity(TargetLocation, EntityType.WOLF);
+                    wolf = w.spawnEntity(TargetLocation, EntityType.WOLF);
                 }else if(args[0].equalsIgnoreCase("Pig")){
-                    world.spawnEntity(TargetLocation, EntityType.PIG);
+                   pig = w.spawnEntity(TargetLocation, EntityType.PIG);
                 }else if(args[0].equalsIgnoreCase("help")){
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
                 	player.sendMessage(ChatColor.AQUA + "Spawns <mob> at <player>'s location anmed [name]");
+<<<<<<< HEAD
                 }else if(args[0].equalsIgnoreCase("authors")){
                 	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
                 	player.sendMessage(ChatColor.AQUA + "Polarcraft");
                 	player.sendMessage(ChatColor.GREEN + "mesome32");
                 }else if(args[0].equalsIgnoreCase("PigZombie")){
                     world.spawnEntity(TargetLocation, EntityType.PIG_ZOMBIE);
+=======
+                }
+                else if(args[0].equalsIgnoreCase("PigZombie")){
+                    pigZombie = w.spawnEntity(TargetLocation, EntityType.PIG_ZOMBIE);
+>>>>>>> Fixed shit
                 }else if(args[0].equalsIgnoreCase("Cow")){
-                    world.spawnEntity(TargetLocation, EntityType.COW);
+                    cow = w.spawnEntity(TargetLocation, EntityType.COW);
                 }else if(args[0].equalsIgnoreCase("Blaze")){
-                    world.spawnEntity(TargetLocation, EntityType.BLAZE);
+                    blaze = w.spawnEntity(TargetLocation, EntityType.BLAZE);
                 }else if(args[0].equalsIgnoreCase("CaveSpider")){
-                    world.spawnEntity(TargetLocation, EntityType.CAVE_SPIDER);
+                    caveSpider = w.spawnEntity(TargetLocation, EntityType.CAVE_SPIDER);
                 }else if(args[0].equalsIgnoreCase("Chicken")){
-                    world.spawnEntity(TargetLocation, EntityType.CHICKEN);
+                    chicken = w.spawnEntity(TargetLocation, EntityType.CHICKEN);
                 }else if(args[0].equalsIgnoreCase("Creeper")){
-                    world.spawnEntity(TargetLocation, EntityType.CREEPER);
+                   creeper = w.spawnEntity(TargetLocation, EntityType.CREEPER);
                 }else if(args[0].equalsIgnoreCase("EnderDragon")){
-                    world.spawnEntity(TargetLocation, EntityType.ENDER_DRAGON);
+                   enderDragon = w.spawnEntity(TargetLocation, EntityType.ENDER_DRAGON);
                 }else if(args[0].equalsIgnoreCase("Enderman")){
-                    world.spawnEntity(TargetLocation, EntityType.ENDERMAN);
+                    enderman = w.spawnEntity(TargetLocation, EntityType.ENDERMAN);
                 }else if(args[0].equalsIgnoreCase("Ghast")){
-                    world.spawnEntity(TargetLocation, EntityType.GHAST);
+                    ghast = w.spawnEntity(TargetLocation, EntityType.GHAST);
                 }else if(args[0].equalsIgnoreCase("Giant")){
-                    world.spawnEntity(TargetLocation, EntityType.GIANT);
+                    giant = w.spawnEntity(TargetLocation, EntityType.GIANT);
                 }else if(args[0].equalsIgnoreCase("IronGolem")){
-                    world.spawnEntity(TargetLocation, EntityType.IRON_GOLEM);
+                    ironGolem = w.spawnEntity(TargetLocation, EntityType.IRON_GOLEM);
                 }else if(args[0].equalsIgnoreCase("MagmaCube")){
-                    world.spawnEntity(TargetLocation, EntityType.MAGMA_CUBE);
+                    magmaCube = w.spawnEntity(TargetLocation, EntityType.MAGMA_CUBE);
                 }else if(args[0].equalsIgnoreCase("Ocelot")){
-                    world.spawnEntity(TargetLocation, EntityType.OCELOT);
+                    ocelot = w.spawnEntity(TargetLocation, EntityType.OCELOT);
                 }else if(args[0].equalsIgnoreCase("Sheep")){
-                    world.spawnEntity(TargetLocation, EntityType.SHEEP);
+                    sheep = w.spawnEntity(TargetLocation, EntityType.SHEEP);
                 }else if(args[0].equalsIgnoreCase("SilverFish")){
-                    world.spawnEntity(TargetLocation, EntityType.SILVERFISH);
+                    silverfish = w.spawnEntity(TargetLocation, EntityType.SILVERFISH);
                 }else if(args[0].equalsIgnoreCase("Skeleton")){
-                    world.spawnEntity(TargetLocation, EntityType.SKELETON);
+                    skeleton = w.spawnEntity(TargetLocation, EntityType.SKELETON);
                 }else if(args[0].equalsIgnoreCase("Slime")){
-                    world.spawnEntity(TargetLocation, EntityType.SLIME);
+                    slime = w.spawnEntity(TargetLocation, EntityType.SLIME);
                 }else if(args[0].equalsIgnoreCase("Spider")){
-                    world.spawnEntity(TargetLocation, EntityType.SPIDER);
+                    spider = w.spawnEntity(TargetLocation, EntityType.SPIDER);
                 }else if(args[0].equalsIgnoreCase("Squid")){
-                    world.spawnEntity(TargetLocation, EntityType.SQUID);
+                    squid = w.spawnEntity(TargetLocation, EntityType.SQUID);
                 }else if(args[0].equalsIgnoreCase("Villager")){
-                    world.spawnEntity(TargetLocation, EntityType.VILLAGER);
+                    villager = w.spawnEntity(TargetLocation, EntityType.VILLAGER);
                 }else if(args[0].equalsIgnoreCase("Zombie")){
-                    world.spawnEntity(TargetLocation, EntityType.ZOMBIE);
+                    zombie = w.spawnEntity(TargetLocation, EntityType.ZOMBIE);
                 }
         }
     }
