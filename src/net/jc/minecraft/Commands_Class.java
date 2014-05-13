@@ -100,6 +100,7 @@ public class Commands_Class implements CommandExecutor{
                 	sender.sendMessage("You have spawned a pigzombie with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Cow")){
                 	cow = w.spawn(bl, Cow.class);
+                	cow = w.spawn(bl, Cow.class);
                     cow.setCustomName(args[1]);
                     sender.sendMessage("You have spawned a cow with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Blaze")){
@@ -179,7 +180,7 @@ public class Commands_Class implements CommandExecutor{
                     zombie.setCustomName(args[1]);
                     sender.sendMessage("You have spawned a zombie with the customname: " + args[1]);
                 } else {
-                	sender.sendMessage("That is not a valid mob!");
+                	sender.sendMessage("That is not a valid mob!");            	
                 }
             }
         }
