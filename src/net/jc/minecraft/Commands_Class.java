@@ -59,6 +59,7 @@ public class Commands_Class implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         Player player = (Player) sender;
         if(cmd.getName().equalsIgnoreCase("cm")){
+        	if(args.length == 2){
         	Player p = (Player) sender;
             if(args.length > 2){
                 player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
@@ -78,22 +79,6 @@ public class Commands_Class implements CommandExecutor{
                 	pig = w.spawn(bl, Pig.class);
                 	pig.setCustomName(args[1]);
                 	sender.sendMessage("You have spawned a pig with the customname: " + args[1]);
-                }else if(args[0].equalsIgnoreCase("help")){
-                	if(args.length > 1) {
-                		player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
-                		return false;
-                	}
-                	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
-                	player.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
-                	player.sendMessage(ChatColor.AQUA + "Spawns <mob> at <player>'s location anmed [name]");
-                }else if(args[0].equalsIgnoreCase("authors")){
-                	if(args.length > 1) {
-                		player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
-                		return false;
-                	}
-                	player.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
-                	player.sendMessage(ChatColor.AQUA + "Polarcraft");
-                	player.sendMessage(ChatColor.GREEN + "mesome32");
                 }else if(args[0].equalsIgnoreCase("PigZombie")){
                     pigZombie = w.spawn(bl, PigZombie.class);
                 	pigZombie.setCustomName(args[1]);
@@ -256,6 +241,15 @@ public class Commands_Class implements CommandExecutor{
                 }
             }
         }
+        }else if(args[0] == "help"){
+        	sender.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
+        	sender.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
+        	sender.sendMessage(ChatColor.AQUA + "Spawns <mob> at <player>'s location anmed [name]");
+        }else if(args[0] == "authors"){
+        	sender.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
+        	sender.sendMessage(ChatColor.AQUA + "Polarcraft");
+        	sender.sendMessage(ChatColor.GREEN + "mesome32");
+        }else
 		return false;
-	}
+		return false;	}
 }
