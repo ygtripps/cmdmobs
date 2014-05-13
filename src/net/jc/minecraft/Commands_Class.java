@@ -178,8 +178,80 @@ public class Commands_Class implements CommandExecutor{
                     zombie = w.spawn(bl, Zombie.class);
                     zombie.setCustomName(args[1]);
                     sender.sendMessage("You have spawned a zombie with the customname: " + args[1]);
-                } else {
-                	sender.sendMessage("That is not a valid mob!");
+                } else if(args[0].equalsIgnoreCase("mobs")){
+                	sender.sendMessage(ChatColor.GRAY + "Mobs you can spawn:");
+                	if(sender.hasPermission("cm.spawn.wolf")){
+                		sender.sendMessage(ChatColor.GREEN + "Wolf");
+                	}
+                	if (sender.hasPermission("cm.spawn.pig") || sender.isOp()){
+                		sender.sendMessage(ChatColor.GREEN + "Pig");
+                	};
+                	if (sender.hasPermission("cm.spawn.pigzombie")){
+                		sender.sendMessage(ChatColor.GREEN + "PigZombie");
+                	};
+                	if (sender.hasPermission("cm.spawn.cow")){
+                		sender.sendMessage(ChatColor.GREEN + "Cow");
+                	};
+                	if (sender.hasPermission("cm.spawn.blaze")){
+                		sender.sendMessage(ChatColor.GREEN + "Blaze");
+                	};
+                	if (sender.hasPermission("cm.spawn.cavespider")){
+                		sender.sendMessage(ChatColor.GREEN + "CaveSpider");
+                	};
+                	if (sender.hasPermission("cm.spawn.chicken")){
+                		sender.sendMessage(ChatColor.GREEN + "Chicken");
+                	};
+                	if (sender.hasPermission("cm.spawn.zombie")){
+                		sender.sendMessage(ChatColor.GREEN + "Zombie");
+                	};
+                	if (sender.hasPermission("cm.spawn.villager")){
+                		sender.sendMessage(ChatColor.GREEN + "Villager");
+                	};
+                	if (sender.hasPermission("cm.spawn.squid")){
+                		sender.sendMessage(ChatColor.GREEN + "Squid");
+                	};
+                	if (sender.hasPermission("cm.spawn.spider")){
+                		sender.sendMessage(ChatColor.GREEN + "Spider");
+                	};
+                	if (sender.hasPermission("cm.spawn.slime")){
+                		sender.sendMessage(ChatColor.GREEN + "Slime");
+                	};
+                	if (sender.hasPermission("cm.spawn.skeleton")){
+                		sender.sendMessage(ChatColor.GREEN + "Skeleton");
+                	};
+                	if (sender.hasPermission("cm.spawn.sheep")){
+                		sender.sendMessage(ChatColor.GREEN + "Sheep");
+                	};
+                	if (sender.hasPermission("cm.spawn.silverfish")){
+                		sender.sendMessage(ChatColor.GREEN + "Silverfish");
+                	};
+                	if (sender.hasPermission("cm.spawn.Ocelot")){
+                		sender.sendMessage(ChatColor.GREEN + "Ocelot");
+                	};
+                	if (sender.hasPermission("cm.spawn.magmacube")){
+                		sender.sendMessage(ChatColor.GREEN + "MagmaCube");
+                	};
+                	if (sender.hasPermission("cm.spawn.irongolem")){
+                		sender.sendMessage(ChatColor.GREEN + "IronGolem");
+                	};
+                	if (sender.hasPermission("cm.spawn.giant")){
+                		sender.sendMessage(ChatColor.GREEN + "Giant");
+                	};
+                	if (sender.hasPermission("cm.spawn.ghast")){
+                		sender.sendMessage(ChatColor.GREEN + "Ghast");
+                	};
+                	if (sender.hasPermission("cm.spawn.enderman")){
+                		sender.sendMessage(ChatColor.GREEN + "Enderman");
+                	};
+                	if (sender.hasPermission("cm.spawn.enderdragon")){
+                		sender.sendMessage(ChatColor.GREEN + "Enderdragon");
+                	};
+                	if (sender.hasPermission("cm.spawn.creeper")){
+                		sender.sendMessage(ChatColor.GREEN + "Creeper");
+                	};
+                }else {
+                	sender.sendMessage(ChatColor.RED + "That is not a valid mob!");
+                	sender.sendMessage(ChatColor.GREEN + "Type /cm mobs to see mobs you can spawn!");
                 }
             }
         }
