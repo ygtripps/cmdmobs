@@ -57,20 +57,12 @@ public class Commands_Class implements CommandExecutor{
 	Creeper creeper;
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        Player player = (Player) sender;
         if(cmd.getName().equalsIgnoreCase("cm")){
-        	if(args.length == 2){
         	Player p = (Player) sender;
-            if(args.length > 2){
-                player.sendMessage(ChatColor.RED + "Exceeded maximum arguments");
-                player.sendMessage(ChatColor.BLUE + "Use; /cm help");
-            }
-            if(args.length < 1){
-                player.sendMessage(ChatColor.RED + "Too few arguments");
-                player.sendMessage(ChatColor.BLUE + "Use; /cm help");
-            }else{
-                World w = p.getWorld();
-                Location bl = p.getLocation();
+            World w = p.getWorld();
+            Location bl = p.getLocation();
+        	if(args.length == 2){
+
                 if(args[0].equalsIgnoreCase("Wolf")){
                     wolf = w.spawn(bl, Wolf.class);
                 	wolf.setCustomName(args[1]);
@@ -164,92 +156,144 @@ public class Commands_Class implements CommandExecutor{
                     zombie = w.spawn(bl, Zombie.class);
                     zombie.setCustomName(args[1]);
                     sender.sendMessage("You have spawned a zombie with the customname: " + args[1]);
-                } else if(args[0].equalsIgnoreCase("mobs")){
-                	sender.sendMessage(ChatColor.GRAY + "Mobs you can spawn:");
+
+                }else {
+                	sender.sendMessage(ChatColor.RED + "That is not a valid mob!");
+                	sender.sendMessage(ChatColor.GREEN + "Type /cm mobs to see mobs you can spawn!");
+                }
+            
+        }else if(args[0].equalsIgnoreCase("help")){
+        	sender.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
+        	sender.sendMessage(ChatColor.GREEN + "/cm <mob> [name]");
+        	sender.sendMessage(ChatColor.AQUA + "Spawns <mob> named [name]");
+        }else if(args[0].equalsIgnoreCase("authors")){
+        	sender.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
+        	sender.sendMessage(ChatColor.AQUA + "Polarcraft");
+        	sender.sendMessage(ChatColor.GREEN + "mesome32");
+        } else if(args[0].equalsIgnoreCase("mobs")){
+            sender.sendMessage(ChatColor.GRAY + "Mobs you can spawn:");
                 	if(sender.hasPermission("cm.spawn.wolf")){
                 		sender.sendMessage(ChatColor.GREEN + "Wolf");
                 	}
                 	if (sender.hasPermission("cm.spawn.pig") || sender.isOp()){
                 		sender.sendMessage(ChatColor.GREEN + "Pig");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.pigzombie")){
                 		sender.sendMessage(ChatColor.GREEN + "PigZombie");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.cow")){
                 		sender.sendMessage(ChatColor.GREEN + "Cow");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.blaze")){
                 		sender.sendMessage(ChatColor.GREEN + "Blaze");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.cavespider")){
                 		sender.sendMessage(ChatColor.GREEN + "CaveSpider");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.chicken")){
                 		sender.sendMessage(ChatColor.GREEN + "Chicken");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.zombie")){
                 		sender.sendMessage(ChatColor.GREEN + "Zombie");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.villager")){
                 		sender.sendMessage(ChatColor.GREEN + "Villager");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.squid")){
                 		sender.sendMessage(ChatColor.GREEN + "Squid");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.spider")){
                 		sender.sendMessage(ChatColor.GREEN + "Spider");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.slime")){
                 		sender.sendMessage(ChatColor.GREEN + "Slime");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.skeleton")){
                 		sender.sendMessage(ChatColor.GREEN + "Skeleton");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.sheep")){
                 		sender.sendMessage(ChatColor.GREEN + "Sheep");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.silverfish")){
                 		sender.sendMessage(ChatColor.GREEN + "Silverfish");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.Ocelot")){
                 		sender.sendMessage(ChatColor.GREEN + "Ocelot");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.magmacube")){
                 		sender.sendMessage(ChatColor.GREEN + "MagmaCube");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.irongolem")){
                 		sender.sendMessage(ChatColor.GREEN + "IronGolem");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.giant")){
                 		sender.sendMessage(ChatColor.GREEN + "Giant");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.ghast")){
                 		sender.sendMessage(ChatColor.GREEN + "Ghast");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.enderman")){
                 		sender.sendMessage(ChatColor.GREEN + "Enderman");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.enderdragon")){
                 		sender.sendMessage(ChatColor.GREEN + "Enderdragon");
-                	};
+                	}
                 	if (sender.hasPermission("cm.spawn.creeper")){
                 		sender.sendMessage(ChatColor.GREEN + "Creeper");
-                	};
-                }else {
-                	sender.sendMessage(ChatColor.RED + "That is not a valid mob!");
-                	sender.sendMessage(ChatColor.GREEN + "Type /cm mobs to see mobs you can spawn!");
-                }
-            }
-        }
-        }else if(args[0] == "help"){
-        	sender.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "CMD MOBS" + ChatColor.GRAY + " ]---");
-        	sender.sendMessage(ChatColor.GREEN + "/cm <mob> <Target Player> [name]");
-        	sender.sendMessage(ChatColor.AQUA + "Spawns <mob> at <player>'s location anmed [name]");
-        }else if(args[0] == "authors"){
-        	sender.sendMessage(ChatColor.GRAY + "---[ " + ChatColor.YELLOW + "Authors" + ChatColor.GRAY + " ]---");
-        	sender.sendMessage(ChatColor.AQUA + "Polarcraft");
-        	sender.sendMessage(ChatColor.GREEN + "mesome32");
-        }else
+                	}
+        }else if(args[0].equals("wolf")){
+        	w.spawn(bl, Wolf.class);
+		} else if(args[0].equalsIgnoreCase("pig")){
+        	w.spawn(bl, Pig.class);
+		} else if(args[0].equalsIgnoreCase("pigzombie")){
+        	w.spawn(bl, PigZombie.class);
+		} else if(args[0].equalsIgnoreCase("cow")){
+        	w.spawn(bl, Cow.class);
+		} else if(args[0].equalsIgnoreCase("blaze")){
+        	w.spawn(bl, Blaze.class);
+		} else if(args[0].equalsIgnoreCase("cavespider")){
+        	w.spawn(bl, CaveSpider.class);
+		} else if(args[0].equalsIgnoreCase("chicken")){
+        	w.spawn(bl, Chicken.class);
+		} else if(args[0].equalsIgnoreCase("zombie")){
+        	w.spawn(bl, Zombie.class);
+		} else if(args[0].equalsIgnoreCase("villager")){
+        	w.spawn(bl, Villager.class);
+		} else if(args[0].equalsIgnoreCase("squid")){
+        	w.spawn(bl, Squid.class);
+		} else if(args[0].equalsIgnoreCase("spider")){
+        	w.spawn(bl, Spider.class);
+		} else if(args[0].equalsIgnoreCase("slime")){
+        	w.spawn(bl, Slime.class);
+		} else if(args[0].equalsIgnoreCase("skeleton")){
+        	w.spawn(bl, Skeleton.class);
+		} else if(args[0].equalsIgnoreCase("sheep")){
+        	w.spawn(bl, Sheep.class);
+		} else if(args[0].equalsIgnoreCase("silverfish")){
+        	w.spawn(bl, Silverfish.class);
+		} else if(args[0].equalsIgnoreCase("ocelot")){
+        	w.spawn(bl, Ocelot.class);
+		} else if(args[0].equalsIgnoreCase("magmacube")){
+        	w.spawn(bl, MagmaCube.class);
+		} else if(args[0].equals("irongolem")){
+        	w.spawn(bl, IronGolem.class);
+		} else if(args[0].equals("giant")){
+        	w.spawn(bl, Giant.class);
+		} else if(args[0].equals("ghast")){
+        	w.spawn(bl, Ghast.class);
+		} else if(args[0].equals("enderman")){
+        	w.spawn(bl, Enderman.class);
+		} else if(args[0].equals("enderdragon")){
+        	w.spawn(bl, EnderDragon.class);
+		} else if(args[0].equals("creeper")){
+        	w.spawn(bl, Creeper.class);
+
+
+        }else{
+			sender.sendMessage(ChatColor.RED + "Invalid syntax: type /cm help");	
+
+		}
+}
 		return false;
-		return false;	}
+}
 }

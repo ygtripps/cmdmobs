@@ -1,6 +1,56 @@
 name: CmdMobs
 main: net.jc.minecraft.Main
-version: 5.12.14
+version: 1.0.0
+permissions:
+  cm.spawn.*:
+    description: Allows Spawning of all mobs
+    children: []
+  cm.spawn.wolf:
+    description: Wolf
+  cm.spawn.pig:
+    description: Pig
+  cm.spawn.pigzombie:
+    description: Pig zombie
+  cm.spawn.cow:
+    description: Cow
+  cm.spawn.blaze:
+    description: Blaze
+  cm.spawn.cavespider:
+    description: Cave spider
+  cm.spawn.chicken:
+    description: Chicken
+  cm.spawn.zombie:
+    description: Zombie
+  cm.spawn.villager:
+    description: Villager
+  cm.spawn.squid:
+    description: Squid
+  cm.spawn.spider:
+    description: Spider
+  cm.spawn.slime:
+    description: Slime
+  cm.spawn.skeleton:
+    description: Skeleton
+  cm.spawn.sheep:
+    description: Sheep
+  cm.spawn.silverfish:
+    description: Silverfish
+  cm.spawn.ocelot:
+    description: Ocelot
+  cm.spawn.magmacube:
+    description: Magma cube
+  cm.spawn.irongolem:
+    description: Iron golem
+  cm.spawn.giant:
+    description: Giant
+  cm.spawn.ghast:
+    description: Ghast
+  cm.spawn.enderman:
+    description: Enderman
+  cm.spawn.enderdragon:
+    description: Enderdragon
+  cm.spawn.creeper:
+    description: Creeper
 commands:
   cm:
      description: Used to spawn mobs with ease.
