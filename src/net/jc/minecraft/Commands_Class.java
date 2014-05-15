@@ -89,8 +89,8 @@ public class Commands_Class implements CommandExecutor{
                 	caveSpider.setCustomName(args[1]);
                 	sender.sendMessage("You have spawned a cavespider with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Chicken")){
-                	wolf = w.spawn(bl, Wolf.class);
-                	wolf.setCustomName(args[1]);
+                	chicken = w.spawn(bl, Chicken.class);
+                	chicken.setCustomName(args[1]);
                 	sender.sendMessage("You have spawned a chicken with the customname: " + args[1]);
                 }else if(args[0].equalsIgnoreCase("Creeper")){
                 	creeper = w.spawn(bl, Creeper.class);
